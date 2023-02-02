@@ -4,14 +4,23 @@ let Student = require("../models/student");
 
 //data add to database
 router.route("/add").post((req,res) => {
-    const name = req.body.name;
-    const age = req.body.age;
+    const fullname = req.body.fullname;
+    const address = req.body.address;
     const gender = req.body.gender;
+    const dob = req.body.dob;
+    const parentname = req.body.parentname;
+    const contactnumber = req.body.contactnumber;
+    const notes = req.body.notes;
+    
 
     const newStudent = new Student({
-        name,
-        age,
-        gender
+        fullname,
+        address,
+        gender,
+        dob,
+        parentname,
+        contactnumber,
+        notes
     })
 
     newStudent.save()
@@ -40,12 +49,16 @@ router.route("/").get((req,res)=>{
 //we can use post method also
 router.route("/update/:id").put(async(req, res) => {
     let userId = req.params.id;
-    const {name, age, gender} = req.body;
+    const {fullname, address, gender, dob, parentname, contactnumber, notes} = req.body;
 
     const updateStudent = {
-        name,
-        age,
-        gender
+        fullname,
+        address,
+        gender,
+        dob,
+        parentname,
+        contactnumber,
+        notes
     }
 
     const update = await Student.findByIdAndUpdate(userId, updateStudent)

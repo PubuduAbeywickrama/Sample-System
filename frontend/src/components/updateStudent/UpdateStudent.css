@@ -1,0 +1,30 @@
+.homediv {
+    width: 400PX;
+    height: auto;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 2%; 
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+   
+}
+.formcontainer{
+    width:400px;
+    text-align: left;
+    font-size: 18px;
+    color :rgb(47, 33, 135);
+
+    
+}
+.formcontainer input{
+    background-color: rgba(246, 245, 245, 0);
+}
+.formcontainer ::placeholder {
+    opacity: 0.5;
+}
+.mainContainer h5 {
+    color :rgb(0, 101, 243);
+    padding-bottom: 10px;
+}

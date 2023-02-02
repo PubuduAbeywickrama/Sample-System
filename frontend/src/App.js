@@ -1,10 +1,11 @@
 import './App.css';
 //import CounterClass from './components/CounterClass';
-import Header from './components/Header';
-import AddStudent from "./components/AddStudent";
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import AllStudent from './components/AllStudent';
 
+import AddStudent from "./components/CreateStudent/AddStudent";
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import AllStudent from './components/Home/AllStudent';
+import UpdateStudent from './components/updateStudent/UpdateStudent'
+import Header from './components/Heder/Header';
 
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
         <Routes>
             <Route path="/" element={<AllStudent/>}/>
             <Route path="/add" element={<AddStudent/>}></Route> 
-          
+            <Route path="/update/:id" element={<UpdateStudent></UpdateStudent>}></Route>
         </Routes>
     </BrowserRouter>
     
